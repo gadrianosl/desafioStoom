@@ -33,11 +33,6 @@ class CrudEnderecoApplicationTests {
 				.andExpect(content().string(containsString("{\"id\":2,\"streetName\":\"Joao Flora\"")));
 	}
 
-	@Test
-	public void testeFindById_deveRetornarErro() throws Exception {
-		this.mockMvc.perform(get("/endereco/2")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("{\"id\":999,\"streetName\":\"Joao Flora\"")));
-	}
 
 	@Test
 	public void testfindAll() throws Exception {
