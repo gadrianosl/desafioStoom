@@ -15,9 +15,6 @@ public class geoCodeController {
         String encodedAddress = URLEncoder.encode(address, "UTF-8");
         Request request = new Request.Builder().url("https://maps.googleapis.com/maps/api/geocode/json?address="
                 + encodedAddress + "&key=AIzaSyCj0cY2yEvVfYhAaTz3-P2MW-YRKmhz5Uw").get().build();
-        // .addHeader("x-rapidapi-host", "google-maps-geocoding.p.rapidapi.com")
-        // .addHeader("x-rapidapi-key",
-        // "AIzaSyCj0cY2yEvVfYhAaTz3-P2MW-YRKmhz5Uw").build();
         ResponseBody responseBody = client.newCall(request).execute().body();
         return responseBody.string();
     }
